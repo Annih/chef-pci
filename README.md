@@ -3,7 +3,9 @@
 [![Build Status][build_status]][build_status]
 [![License][license]][license]
 
-Expose PCI information via automatic attributes.
+Expose PCI information via automatic attributes even during compilation time of the first Chef run.
+
+Due to the fact the Ohai plugins system requires a setup phase, this cookbooks does not use it.
 
 ## Requirements
 
