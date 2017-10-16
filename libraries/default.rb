@@ -5,6 +5,9 @@ module PCI
     when 'windows'
       require_relative 'windows.rb'
       Windows.pci_devices
+    when 'linux'
+      require_relative 'linux.rb'
+      Linux.pci_devices
     else
       ::Chef::Log.warn "[PCI] #{node['os']} is not a supported Operating System."
       nil
