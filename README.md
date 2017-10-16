@@ -26,8 +26,9 @@ To get access to the PCI attributes:
 Below attributes are available in `pci` root namespace.
 
 Attribute     | Description 
---------------|-------------------------------------------------
+--------------|--------------------------------------------------
 `devices `    | A Hash of all available PCI devices on the node.
+`pnp_mapping `| A mapping between PNPIDs an PCI slots on Windows.
 
 ## Recipes
 
