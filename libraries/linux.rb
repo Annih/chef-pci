@@ -7,26 +7,23 @@ module PCI
       ::File.basename device_path
     end
 
-    # Read a PCI value from sysFS
-    def self.read_value(path, component, digits = 4)
-      file = ::File.join(path, component)
-      ::File.read(file).gsub(/^0x(\h{#{digits}}).*$/, '\1') if ::File.exist? file
+    # Read PCI ids from the device configuration space
+    # See https://upload.wikimedia.org/wikipedia/commons/c/ca/Pci-config-space.svg
+    # N.B. One byte of the class ID is ignored
+    def self.read_values(path)
+      ::Mash.new.tap do |result|
+        data = ::File.binread(::File.join(path, 'config'), 48).unpack('vvx4cxvx32vv')
+        %i[vendor_id device_id rev class_id svendor_id sdevice_id].zip(data).each do |key, value|
+          length = key == :rev ? 2 : 4
+          result[key] = value.to_s(16).rjust(length, '0') if value != 0
+        end
+      end
     end
 
     # Retrieve all available PCI devices info
     def self.pci_devices
       ::Mash.new.tap do |result|
-        ::Dir['/sys/bus/pci/devices/*'].each do |device_path|
-          result[slot(device_path)] = ::Mash.new(
-            vendor_id:  read_value(device_path, 'vendor'),
-            svendor_id: read_value(device_path, 'subsystem_vendor'),
-            device_id:  read_value(device_path, 'device'),
-            sdevice_id: read_value(device_path, 'subsystem_device'),
-            class_id:   read_value(device_path, 'class'),
-            # Revision is not available via SysFS on Kernel < 4.10
-            rev:        read_value(device_path, 'revision', 2),
-          )
-        end
+        ::Dir['/sys/bus/pci/devices/*'].each { |path| result[slot(path)] = read_values(path) }
       end
     end
   end
