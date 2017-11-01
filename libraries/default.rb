@@ -16,4 +16,16 @@ module PCI
       end
     end
   end
+
+  # Retrieve a mapping between Windows PNPIDs & PCI slots
+  unless methods.include? :pnp_mapping
+    def self.pnp_mapping(node)
+      raise '[PCI] pnp_mapping only available on Windows.' if node['os'] != 'windows'
+
+      pci_devices = node['pci']['devices'] if node['pci']&.key?('devices')
+      pci_devices = devices(node) if pci_devices.nil?
+
+      pci_devices.map { |slot, device| [device['pnp_id'], slot] }.to_h
+    end
+  end
 end

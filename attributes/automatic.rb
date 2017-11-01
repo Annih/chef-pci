@@ -2,4 +2,4 @@
 automatic_attrs['pci']['devices'] = ::PCI.devices(node)
 
 # Provide a mapping between Windows PNPIDs & PCI slots
-automatic_attrs['pci']['pnp_mapping'] = node['pci']['devices'].map { |slot, device| [device['pnp_id'], slot] }.to_h if platform? 'windows'
+automatic_attrs['pci']['pnp_mapping'] = ::PCI.pnp_mapping(node) if platform? 'windows'
