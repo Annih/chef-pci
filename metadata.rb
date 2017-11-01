@@ -10,6 +10,6 @@ supports         'centos', '>= 6.0'
 supports         'redhat', '>= 6.0'
 supports         'windows', '>= 6.3'
 
-chef_version     '>= 12.7'                             if respond_to? :chef_version
-source_url       'https://github.com/annih/pci'        if respond_to? :source_url
-issues_url       'https://github.com/annih/pci/issues' if respond_to? :issues_url
+chef_version     '>= 12.7'                                  if respond_to? :chef_version
+source_url       'https://github.com/annih/chef-pci'        if respond_to? :source_url
+issues_url       'https://github.com/annih/chef-pci/issues' if respond_to? :issues_url

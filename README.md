@@ -70,9 +70,9 @@ See the License for the specific language governing permissions and
 limitations under the License.
 ```
 [annih]:            https://github.com/Annih
-[repository]:       https://github.com/Annih/pci
-[linux_build]:      https://img.shields.io/travis/Annih/pci/master.svg?label=linux
-[windows_build]:    https://img.shields.io/appveyor/ci/Annih/pci/master.svg?label=windows
+[repository]:       https://github.com/Annih/chef-pci
+[linux_build]:      https://img.shields.io/travis/Annih/chef-pci/master.svg?label=linux
+[windows_build]:    https://img.shields.io/appveyor/ci/Annih/chef-pci/master.svg?label=windows
 [cookbook_version]: https://img.shields.io/cookbook/v/pci.svg
-[license]:          https://img.shields.io/github/license/Annih/pci.svg
+[license]:          https://img.shields.io/github/license/Annih/chef-pci.svg
 [supermarket_url]:  https://supermarket.chef.io/cookbooks/pci
