@@ -1,7 +1,8 @@
-# pci Cookbook
+# Cookbook pci
 [![Cookbook Version][cookbook_version]][supermarket_url]
-[![Build Status][build_status]][build_status]
 [![License][license]][license]
+[![Linux Build Status][linux_build]][linux_build]
+[![Windows Build Status][windows_build]][windows_build]
 
 Expose PCI information via automatic attributes even during compilation time of the first Chef run.
 
@@ -70,7 +71,8 @@ limitations under the License.
 ```
 [annih]:            https://github.com/Annih
 [repository]:       https://github.com/Annih/pci
-[build_status]:     https://api.travis-ci.org/Annih/pci.svg?branch=master
+[linux_build]:      https://img.shields.io/travis/Annih/pci/master.svg?label=linux
+[windows_build]:    https://img.shields.io/appveyor/ci/Annih/pci/master.svg?label=windows
 [cookbook_version]: https://img.shields.io/cookbook/v/pci.svg
 [license]:          https://img.shields.io/github/license/Annih/pci.svg
 [supermarket_url]:  https://supermarket.chef.io/cookbooks/pci
