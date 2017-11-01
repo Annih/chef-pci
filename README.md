@@ -1,8 +1,8 @@
 # Cookbook pci
-[![Cookbook Version][cookbook_version]][supermarket_url]
-[![License][license]][license]
-[![Linux Build Status][linux_build]][linux_build]
-[![Windows Build Status][windows_build]][windows_build]
+[![Cookbook Version][cookbook_version]][cookbook_page]
+[![License][license_shield]][license_file]
+[![Linux Build Status][linux_build_shield]][linux_build_status]
+[![Windows Build Status][windows_build_shield]][windows_build_status]
 
 Expose PCI information via automatic attributes even during compilation time of the first Chef run.
 
@@ -69,10 +69,13 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ```
-[annih]:            https://github.com/Annih
-[repository]:       https://github.com/Annih/chef-pci
-[linux_build]:      https://img.shields.io/travis/Annih/chef-pci/master.svg?label=linux
-[windows_build]:    https://img.shields.io/appveyor/ci/Annih/chef-pci/master.svg?label=windows
-[cookbook_version]: https://img.shields.io/cookbook/v/pci.svg
-[license]:          https://img.shields.io/github/license/Annih/chef-pci.svg
-[supermarket_url]:  https://supermarket.chef.io/cookbooks/pci
+[annih]:                https://github.com/Annih
+[repository]:           https://github.com/Annih/chef-pci
+[cookbook_version]:     https://img.shields.io/cookbook/v/pci.svg
+[cookbook_page]:        https://supermarket.chef.io/cookbooks/pci
+[license_file]:         https://github.com/Annih/chef-pci/blob/master/LICENSE
+[license_shield]:       https://img.shields.io/github/license/Annih/chef-pci.svg
+[linux_build_shield]:   https://img.shields.io/travis/Annih/chef-pci/master.svg?label=linux
+[linux_build_status]:   https://travis-ci.org/Annih/chef-pci/branches
+[windows_build_shield]: https://img.shields.io/appveyor/ci/Annih/chef-pci/master.svg?label=windows
+[windows_build_status]: https://ci.appveyor.com/project/Annih/chef-pci?branch=master
