@@ -24,6 +24,9 @@ To get access to the PCI attributes:
 * from another cookbook -> add a dependency to `pci` in your cookbook's metadata.
 * without cookbooks -> add the `pci::default` recipe to your node run-list.
 
+You can disable these attributes, i.e. tell chef to not fetch this attributes.
+Just set the Chef setting `pci_devices_disabled` to `true` in your client config.
+
 ## Attributes
 
 Below attributes are available in `pci` root namespace.

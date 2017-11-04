@@ -25,3 +25,13 @@ def all_devices(pnp_id = false)
     end
   end
 end
+
+::RSpec.configure do |config|
+  # Specify the Chef log_level (default: :warn)
+  ::Chef::Log.level(config.log_level = :fatal)
+  config.before do
+    # Reset the chef config before every check
+    # This helps to ensure libraries code is properly tested
+    ::Chef::Config[:pci_devices_disabled] = false
+  end
+end
