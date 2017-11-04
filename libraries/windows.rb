@@ -6,7 +6,7 @@ module PCI
   module Windows
     unless constants.include?(:PNP_IDS)
       PNP_IDS = [
-        /^PCI\\VEN_(?<vendor_id>\h{4})&DEV_(?<device_id>\h{4})&SUBSYS_(?<svendor_id>\h{4})(?<sdevice_id>\h{4})&REV_(?<rev>\h{2})$/,
+        /^PCI\\VEN_(?<vendor_id>\h{4})&DEV_(?<device_id>\h{4})&SUBSYS_(?<sdevice_id>\h{4})(?<svendor_id>\h{4})&REV_(?<rev>\h{2})$/,
         /^PCI\\VEN_(?<vendor_id>\h{4})&DEV_(?<device_id>\h{4})&CC_(?<class_id>\h{4})$/,
       ].freeze
     end
