@@ -51,8 +51,8 @@ describe '::PCI.pnp_mapping' do
 
     shared_examples 'pnp_mapping' do
       it 'computes the pnp mapping' do
-        mapping = ::Mash.new('PCI\VEN_8086&DEV_2415&SUBSYS_01771028&REV_01': '0000:00:00.0',
-                             'PCI\VEN_1AF4&DEV_1000&SUBSYS_00011AF4':        '0000:00:01.0',)
+        mapping = ::Mash.new('PCI\VEN_8086&DEV_2415&SUBSYS_01771028&REV_01\3&11583659&0E0': '0000:00:00.0',
+                             'PCI\VEN_1AF4&DEV_1000&SUBSYS_00011AF4&REV_00\3&267a616&1&18': '0000:00:01.0',)
         expect(::PCI.pnp_mapping(node)).to eq mapping
       end
     end
