@@ -12,7 +12,7 @@ module PCI
         Linux.pci_devices
       else
         ::Chef::Log.warn "[PCI] #{node['os']} is not a supported Operating System."
-        nil
+        {}
       end
     end
   end
