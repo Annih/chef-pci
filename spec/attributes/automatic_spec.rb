@@ -28,7 +28,7 @@ describe 'The cookbook pci' do
 
         it 'loads pci devices as an Automatic attribute: pci.devices' do
           result = double.as_null_object
-          expect(::PCI).to receive(:devices).and_return result
+          expect(::PCI).to receive(:devices).at_least(:once).and_return result
           expect(chef_run.node.automatic['pci']['devices']).to be result
         end
 

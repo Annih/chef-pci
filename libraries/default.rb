@@ -12,7 +12,7 @@ module PCI
         Linux.pci_devices
       else
         ::Chef::Log.warn "[PCI] #{node['os']} is not a supported Operating System."
-        nil
+        ::Mash.new
       end
     end
   end
@@ -23,7 +23,7 @@ module PCI
       raise '[PCI] pnp_mapping only available on Windows.' if node['os'] != 'windows'
 
       pci_devices = node['pci']['devices'] if node['pci']&.key?('devices')
-      pci_devices = devices(node) if pci_devices.nil?
+      pci_devices = devices(node) if pci_devices.nil? || pci_devices.empty?
 
       pci_devices.map { |slot, device| [device['pnp_id'], slot] }.to_h
     end

@@ -35,8 +35,8 @@ describe '::PCI.devices' do
       subject.call
     end
 
-    it 'returns nil' do
-      expect(subject.call).to be nil
+    it 'returns an empty hash' do
+      expect(subject.call).to be_a(::Hash).and be_empty
     end
   end
 end
