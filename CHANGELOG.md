@@ -2,6 +2,9 @@
 
 This file is used to list changes made in each version of the pci cookbook.
 
+## Version 0.3.2
+- ::PCI.devices return an empty Mash on non-supported platforms
+
 ## Version 0.3.1
 - Correct method to retrieve PNP DeviceID on windows
 
