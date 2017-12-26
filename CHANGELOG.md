@@ -2,6 +2,9 @@
 
 This file is used to list changes made in each version of the pci cookbook.
 
+## Version 0.3.4
+- Initialize the pci attribute namespace
+
 ## Version 0.3.3
 - Convert PNP ID to uppercase
 
