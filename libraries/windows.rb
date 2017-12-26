@@ -47,7 +47,7 @@ module PCI
           pci_slot = slot instance['LocationInformation']
           result[pci_slot] = pnp_info(instance['HardwareID'])
           # Save the full PNPID in the result
-          result[pci_slot]['pnp_id'] = instance.name[/PCI\\VEN_.*$/]
+          result[pci_slot]['pnp_id'] = instance.name[/PCI\\VEN_.*$/].upcase
         end
       end
     end
