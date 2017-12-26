@@ -2,6 +2,9 @@
 
 This file is used to list changes made in each version of the pci cookbook.
 
+## Version 0.3.3
+- Convert PNP ID to uppercase
+
 ## Version 0.3.2
 - ::PCI.devices return an empty Mash on non-supported platforms
 
