@@ -2,6 +2,9 @@
 
 This file is used to list changes made in each version of the pci cookbook.
 
+## Version 0.3.5
+- Allow zero as valid ID on linux
+
 ## Version 0.3.4
 - Initialize the pci attribute namespace
 
