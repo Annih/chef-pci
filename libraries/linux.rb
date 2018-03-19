@@ -15,7 +15,7 @@ module PCI
         data = ::File.binread(::File.join(path, 'config'), 48).unpack('vvx4cxvx32vv')
         %i[vendor_id device_id rev class_id svendor_id sdevice_id].zip(data).each do |key, value|
           length = key == :rev ? 2 : 4
-          result[key] = value.to_s(16).rjust(length, '0') if value != 0
+          result[key] = value.to_s(16).rjust(length, '0')
         end
       end
     end
